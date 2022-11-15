@@ -31,6 +31,7 @@
     "@coreui/vue-chartjs": "2.0.0",
     "core-js": "^3.19.0",
     "vue": "^3.2.23",
+    "vue-grid-layout": "^2.4.0",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
   },

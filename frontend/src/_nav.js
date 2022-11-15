@@ -1,12 +1,11 @@
 export default [
   {
     component: 'CNavItem',
-    name: 'Dashboard',
+    name: 'Your Journal',
     to: '/dashboard',
     icon: 'cil-speedometer',
     badge: {
       color: 'primary',
-      text: 'NEW',
     },
   },
   {
