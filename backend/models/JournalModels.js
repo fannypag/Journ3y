@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
  
-const User = mongoose.Schema({
-    fullname:{
+const Journal = mongoose.Schema({
+    title:{
         type: String,
         required: true
     },
-    username:{
+    desc:{
         type: String,
         required: true
     },
-    password:{
-        type: String,
+    date:{
+        type: Int32Array,
         required: true
     },
     grid_no:{
@@ -19,4 +19,4 @@ const User = mongoose.Schema({
     }
 });
  
-export default mongoose.model('user', User);
+export default mongoose.model('journal', Journal);
