@@ -8,16 +8,19 @@
               <CForm>
                 <h1>Register</h1>
                 <p class="text-medium-emphasis">Create your account</p>
+                
+                <CInputGroup class="mb-3">
+                  <CInputGroupText>@</CInputGroupText>
+                  <CFormInput placeholder="Fullname" autocomplete="Fullname" />
+                </CInputGroup>
+
                 <CInputGroup class="mb-3">
                   <CInputGroupText>
                     <CIcon icon="cil-user" />
                   </CInputGroupText>
                   <CFormInput placeholder="Username" autocomplete="username" />
                 </CInputGroup>
-                <CInputGroup class="mb-3">
-                  <CInputGroupText>@</CInputGroupText>
-                  <CFormInput placeholder="Email" autocomplete="email" />
-                </CInputGroup>
+                
                 <CInputGroup class="mb-3">
                   <CInputGroupText>
                     <CIcon icon="cil-lock-locked" />
@@ -28,18 +31,9 @@
                     autocomplete="new-password"
                   />
                 </CInputGroup>
-                <CInputGroup class="mb-4">
-                  <CInputGroupText>
-                    <CIcon icon="cil-lock-locked" />
-                  </CInputGroupText>
-                  <CFormInput
-                    type="password"
-                    placeholder="Repeat password"
-                    autocomplete="new-password"
-                  />
-                </CInputGroup>
+                
                 <div class="d-grid">
-                  <CButton color="success">Create Account</CButton>
+                  <CButton color="success">Save Account</CButton>
                 </div>
               </CForm>
             </CCardBody>
