@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import Journal from './widgets/Journal.vue'
+  import Journal from './widgets/Journal.vue'
 
-export default {
-  name: 'Dashboard',
-  components: {
-    Journal,
-  },
-}
+  export default {
+    name: 'Dashboard',
+    components: {
+      Journal,
+    },
+  }
 </script>
