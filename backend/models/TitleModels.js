@@ -5,12 +5,8 @@ const Title = mongoose.Schema({
         type: String,
         required: true
     },
-    desc:{
-        type: String,
-        required: true
-    },
-    date:{
-        type: Int,
+    grid_no:{
+        type: Number,
         required: true
     }
 });

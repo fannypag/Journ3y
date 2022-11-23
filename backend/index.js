@@ -6,7 +6,7 @@ import UserRoute from "./routes/UserRoute.js";
 // var mongoose = require("mongoose");
 
 const app = express();
-mongoose.connect('mongodb+srv://journ3y:journey@journ3y.hbejhsm.mongodb.net/test',{
+mongoose.connect('mongodb+srv://journ3y:journey@journ3y.hbejhsm.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

@@ -10,11 +10,11 @@ const Journal = mongoose.Schema({
         required: true
     },
     date:{
-        type: Int32Array,
+        type: Date,
         required: true
     },
     grid_no:{
-        type: Int32Array,
+        type: Number,
         required: true
     }
 });

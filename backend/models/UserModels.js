@@ -14,7 +14,7 @@ const User = mongoose.Schema({
         required: true
     },
     grid_no:{
-        type: Int32Array,
+        type: Number,
         required: true
     }
 });

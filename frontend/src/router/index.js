@@ -20,6 +20,15 @@ const routes = [
           import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard.vue'),
       },
       {
+        path: '/diary',
+        name: 'Diary',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+          import(/* webpackChunkName: "dashboard" */ '@/views/widgets/Diary.vue'),
+      },
+      {
         path: '/theme',
         name: 'Theme',
         redirect: '/theme/typography',
