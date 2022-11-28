@@ -19,10 +19,11 @@ export default class API {
     }
 
     // to insert post into database
-    static async addPost(post){
-        const res = await axios.post(url, post);
+    static async saveJournal(journal){
+        const res = await axios.post(url, journal);
         return res.data;
     }
+
     // to update post into database
     static async updateJournal(id, journal){
         const res = await axios.patch(`${url}/${id}`, journal);

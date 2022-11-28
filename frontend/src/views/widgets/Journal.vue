@@ -26,14 +26,14 @@
     </div>
 
     <div v-for="(diary, thedate) in diaries" :key="thedate">
-        <div v-if="diary.date === 'undefined'">
+        <div v-if="diary.date !== thedate">
             <CRow class="mt-2 mb-4">
                 <CCol :sm="6">
                     <CCard>
                         <CCardBody color="primary">
                             <CCardTitle>Cerita hari ini</CCardTitle>
                         <CCardText>
-                        <CFormTextarea v-model="updated1"></CFormTextarea>
+                        <CFormTextarea v-model="add1"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -47,7 +47,7 @@
                         <CCardBody>
                         <CCardTitle>Bagaimana Kesehatanmu hari ini?</CCardTitle>
                         <CCardText>
-                            <CFormTextarea v-model="updated2"></CFormTextarea>
+                            <CFormTextarea v-model="add2"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -64,7 +64,7 @@
                         <CCardBody>
                         <CCardTitle>Yang paling disyukuri hari ini</CCardTitle>
                         <CCardText>
-                            <CFormTextarea v-model="updated3"></CFormTextarea>
+                            <CFormTextarea v-model="add3"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -78,7 +78,7 @@
                         <CCardBody>
                         <CCardTitle>Inspirasi yang didapat hari ini</CCardTitle>
                         <CCardText>
-                            <CFormTextarea v-model="updated4"></CFormTextarea>
+                            <CFormTextarea v-model="add4"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -95,7 +95,7 @@
                         <CCardBody>
                         <CCardTitle>Hal yang telah dicapai hari ini</CCardTitle>
                         <CCardText>
-                            <CFormTextarea v-model="updated5"></CFormTextarea>
+                            <CFormTextarea v-model="add5"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -109,7 +109,7 @@
                         <CCardBody>
                         <CCardTitle>Keuangan di hari ini</CCardTitle>
                         <CCardText>
-                            <CFormTextarea v-model="updated6"></CFormTextarea>
+                            <CFormTextarea v-model="add6"></CFormTextarea>
                         </CCardText>
                         <!-- <CButton
                         >
@@ -121,6 +121,7 @@
             </CRow>
 
             <CButton
+                @click="add()"
             >
                 Add Diary
             </CButton>
@@ -246,6 +247,14 @@
         return {
             diaries: [],
             thedate: new Date().toISOString().split("T")[0],
+            
+            add1 : "",
+            add2 : "",
+            add3 : "",
+            add4 : "",
+            add5 : "",
+            add6 : "",
+            
             updated1 : "",
             updated2 : "",
             updated3 : "",
@@ -262,6 +271,20 @@
          
     },
     methods: {
+        async add(){
+            let diaries = this.diaries[0]
+            diaries.date = this.thedate
+            diaries.desc1 = this.add1
+            diaries.desc2 = this.add2
+            diaries.desc3 = this.add3
+            diaries.desc4 = this.add4
+            diaries.desc5 = this.add5
+            diaries.desc6 = this.add6
+
+            const response = await API.saveJournal(diaries)
+            // console.log("ini api",response)
+            this.$router.push({name : 'Dashboard', params: {message: response.message}});
+        },
         async update(id){
             let diaries = this.diaries[0]
             diaries.desc1 = this.updated1
@@ -274,7 +297,7 @@
             const response = await API.updateJournal(id, diaries)
             // console.log("ini api",response)
             this.$router.push({name : 'Dashboard', params: {message: response.message}});
-        }
+        },
         
     },
 
