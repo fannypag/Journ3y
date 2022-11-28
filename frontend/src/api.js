@@ -20,6 +20,7 @@ export default class API {
 
     // to insert post into database
     static async saveJournal(journal){
+        console.log(journal);
         const res = await axios.post(url, journal);
         return res.data;
     }

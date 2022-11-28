@@ -8,7 +8,7 @@ export const getJournalsByDate = async (req, res) => {
     afterDate = afterDate.join('-')
     console.log(afterDate)
     try {
-        const journals = await Journal.find({date: { $gte: date, $lte: afterDate }});
+        const journals = await Journal.find({date: { $gte: date, $lte: afterDate }});
         
         res.status(200).json(journals);
     } catch (error) {
@@ -53,4 +53,5 @@ export const deleteJournal = async (req, res) => {
         res.status(400).json({message: error.message});
     }
 }
+
 
