@@ -263,11 +263,6 @@ const routes = [
           },
         ],
       },
-      {
-        path: '/widgets',
-        name: 'Widgets',
-        component: () => import('@/views/widgets/Widgets.vue'),
-      },
     ],
   },
   {

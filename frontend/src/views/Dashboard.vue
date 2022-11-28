@@ -1,44 +1,34 @@
 <template>
   <div>
-    <CRow>
-      <CCol :xs="2">
-        <CWidgetStatsF
-          color="primary"
-          :padding="false"
-          value="23-11-2022"
-        >
-          <template #icon>
-            <CIcon icon="cil-calendar" size="xxl" />
-          </template>
-        </CWidgetStatsF>
-      </CCol>
-      <CCol :xs="3">
-        <CPagination aria-label="Page navigation example">
-          <CPaginationItem aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </CPaginationItem>
-          <CPaginationItem>1</CPaginationItem>
-          <CPaginationItem>2</CPaginationItem>
-          <CPaginationItem>3</CPaginationItem>
-          <CPaginationItem aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </CPaginationItem>
-        </CPagination>
-      </CCol>
-    </CRow>
-  </div>
-  <div>
     <Journal />
   </div>
 </template>
 
 <script>
   import Journal from './widgets/Journal.vue'
+  import API from '@/api';
 
   export default {
     name: 'Dashboard',
     components: {
       Journal,
     },
+
+    data(){
+        return{
+          diaries : [],
+          thedate : new Date().toISOString().split('T')[0]
+        }
+    },
+
+    async created() {
+        const response = await API.getJournalsByDate(this.thedate);
+        // const response = await API.getAllPosts()
+        this.diaries = response;
+        // console.log(this.diaries)
+        // console.log(this.thedate)
+    },
   }
+
+
 </script>

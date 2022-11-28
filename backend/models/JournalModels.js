@@ -5,10 +5,6 @@ const Journal = mongoose.Schema({
         type: String,
         required: true
     },
-    desc:{
-        type: String,
-        required: true
-    },
     date:{
         type: Date,
         required: true
@@ -16,7 +12,25 @@ const Journal = mongoose.Schema({
     grid_no:{
         type: Number,
         required: true
-    }
+    },
+    desc1:{
+        type: String
+    },
+    desc2:{
+        type: String
+    },
+    desc3:{
+        type: String
+    },
+    desc4:{
+        type: String
+    },
+    desc5:{
+        type: String
+    },
+    desc6:{
+        type: String
+    },
 });
  
 export default mongoose.model('journal', Journal);
