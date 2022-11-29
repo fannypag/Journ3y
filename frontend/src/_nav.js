@@ -11,7 +11,7 @@ export default [
   {
     component: 'CNavItem',
     name: 'Add Journal',
-    to: '/dashboard',
+    to: '/addJournal',
     icon: 'cil-pencil',
     badge: {
       color: 'primary',

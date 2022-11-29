@@ -24,115 +24,116 @@
         </CCol>
         </CRow>
     </div>
-
-    <div v-for="(diary, thedate) in diaries" :key="thedate">
-                
-        <!-- <div v-else> -->
-            <CRow class="mt-2 mb-4">
-                <CCol :sm="6">
-                    <CCard>
-                        <CCardBody color="primary">
-                            <CCardTitle>Cerita hari ini</CCardTitle>
-                        <CCardText>
-                        <CFormTextarea v-model="updated1">{{diary.desc1}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
-                    </CCol>
-                    <CCol :sm="6">
-                    <CCard>
-                        <CCardBody>
-                        <CCardTitle>Bagaimana Kesehatanmu hari ini?</CCardTitle>
-                        <CCardText>
-                            <CFormTextarea v-model="updated2">{{diary.desc2}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
+    
+    <div v-if="diaries.length===0">
+        <CCardTitle>Tidak ada Jurnal, silakan tambahkan pada fitur "Add Journal"</CCardTitle>
+    </div>
+    <div v-else v-for="(diary, thedate) in diaries" :key="thedate">
+        <CRow class="mt-2 mb-4">
+            <CCol :sm="6">
+                <CCard>
+                    <CCardBody color="primary">
+                        <CCardTitle>Cerita hari ini</CCardTitle>
+                    <CCardText>
+                    <CFormTextarea v-model="updated1">{{diary.desc1}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
                 </CCol>
-            </CRow>
-
-            <CRow class="mt-2 mb-4">
                 <CCol :sm="6">
-                    <CCard>
-                        <CCardBody>
-                        <CCardTitle>Yang paling disyukuri hari ini</CCardTitle>
-                        <CCardText>
-                            <CFormTextarea v-model="updated3">{{diary.desc3}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
-                    </CCol>
-                    <CCol :sm="6">
-                    <CCard >
-                        <CCardBody>
-                        <CCardTitle>Inspirasi yang didapat hari ini</CCardTitle>
-                        <CCardText>
-                            <CFormTextarea v-model="updated4">{{diary.desc4}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
-                </CCol>
-            </CRow>
+                <CCard>
+                    <CCardBody>
+                    <CCardTitle>Bagaimana Kesehatanmu hari ini?</CCardTitle>
+                    <CCardText>
+                        <CFormTextarea v-model="updated2">{{diary.desc2}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
+            </CCol>
+        </CRow>
 
-            <CRow class="mt-2 mb-4">
+        <CRow class="mt-2 mb-4">
+            <CCol :sm="6">
+                <CCard>
+                    <CCardBody>
+                    <CCardTitle>Yang paling disyukuri hari ini</CCardTitle>
+                    <CCardText>
+                        <CFormTextarea v-model="updated3">{{diary.desc3}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
+                </CCol>
                 <CCol :sm="6">
-                    <CCard >
-                        <CCardBody>
-                        <CCardTitle>Hal yang telah dicapai hari ini</CCardTitle>
-                        <CCardText>
-                            <CFormTextarea v-model="updated5">{{diary.desc5}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
-                    </CCol>
-                    <CCol :sm="6">
-                    <CCard >
-                        <CCardBody>
-                        <CCardTitle>Keuangan di hari ini</CCardTitle>
-                        <CCardText>
-                            <CFormTextarea v-model="updated6">{{diary.desc6}}</CFormTextarea>
-                        </CCardText>
-                        <!-- <CButton
-                            @click="update(diary._id)"
-                        >
-                            Save Diary
-                        </CButton> -->
-                        </CCardBody>
-                    </CCard>
-                </CCol>
-            </CRow>
+                <CCard >
+                    <CCardBody>
+                    <CCardTitle>Inspirasi yang didapat hari ini</CCardTitle>
+                    <CCardText>
+                        <CFormTextarea v-model="updated4">{{diary.desc4}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
+            </CCol>
+        </CRow>
 
-            <CButton
-                @click="update(diary._id)"
-            >
-                Save Diary
-            </CButton>
-        <!-- </div> -->
+        <CRow class="mt-2 mb-4">
+            <CCol :sm="6">
+                <CCard >
+                    <CCardBody>
+                    <CCardTitle>Hal yang telah dicapai hari ini</CCardTitle>
+                    <CCardText>
+                        <CFormTextarea v-model="updated5">{{diary.desc5}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
+                </CCol>
+                <CCol :sm="6">
+                <CCard >
+                    <CCardBody>
+                    <CCardTitle>Keuangan di hari ini</CCardTitle>
+                    <CCardText>
+                        <CFormTextarea v-model="updated6">{{diary.desc6}}</CFormTextarea>
+                    </CCardText>
+                    <!-- <CButton
+                        @click="update(diary._id)"
+                    >
+                        Save Diary
+                    </CButton> -->
+                    </CCardBody>
+                </CCard>
+            </CCol>
+        </CRow>
+
+        <CButton
+            @click="update(diary._id)"
+        >
+            Save Journal
+        </CButton>
+
     </div>
 
 </template>
