@@ -30,11 +30,11 @@
                   </CInputGroup>
                   <CRow>
                     <CCol>
-                      <CButton color="primary" class="px-4"> 
+                      <CButton @click="Dashboard()" color="primary" class="px-4"> 
                         Login </CButton>
                     </CCol>
                     <CCol>
-                      <CButton color="primary" class="px-4">
+                      <CButton @click="Register()" color="primary" class="px-4">
                         Create account</CButton>
                     </CCol>
                   </CRow>
@@ -51,5 +51,14 @@
 <script>
 export default {
   name: 'Login',
+
+  methods:{
+    Dashboard(){
+      this.$router.push('/dashboard'); 
+    },
+    Register(){
+      this.$router.push('/register'); 
+    },
+  }
 }
 </script>

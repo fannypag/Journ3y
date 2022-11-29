@@ -2,16 +2,14 @@ import mongoose from "mongoose";
  
 const Journal = mongoose.Schema({
     title:{
-        type: String,
-        required: true
+        type: String
     },
     date:{
         type: Date,
         required: true
     },
     grid_no:{
-        type: Number,
-        required: true
+        type: Number
     },
     desc1:{
         type: String

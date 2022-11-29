@@ -161,11 +161,8 @@
               const newDate = moment(start);
               const mydate = newDate.add(day, "day").format("YYYY-MM-DD");
               this.date = mydate;
-            //   this.diaries = await API.getJournalsByDate(this.date);
-              console.log(this.date);
-            //   console.log(this.diaries);
         },
-        async update(){
+        async add(){
             let diaries = this.diaries[0]
             diaries.date = this.thedate
             diaries.desc1 = this.add1
@@ -174,9 +171,10 @@
             diaries.desc4 = this.add4
             diaries.desc5 = this.add5
             diaries.desc6 = this.add6
+            delete diaries._id
 
             const response = await API.saveJournal(diaries)
-            // console.log("ini api",response)
+
             this.$router.push({name : 'Dashboard', params: {message: response.message}});
         }
         

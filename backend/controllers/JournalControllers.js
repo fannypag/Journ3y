@@ -26,11 +26,14 @@ export const getJournalById = async (req, res) => {
 }
  
 export const saveJournal = async (req, res) => {
-    const journal = new Journal(req.body);
-    try {
-        const insertedjournal = await Journal.save();
+    let journal = new Journal(req.body);
+    console.log(journal)
+    try {  
+        const insertedjournal = await journal.save();
+        console.log(insertedjournal)
         res.status(201).json(insertedjournal);
     } catch (error) {
+        console.log(error.message)
         res.status(400).json({message: error.message});
     }
 }

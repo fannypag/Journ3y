@@ -33,7 +33,7 @@
                 </CInputGroup>
                 
                 <div class="d-grid">
-                  <CButton color="success">Save Account</CButton>
+                  <CButton @click="LoginPage()" color="success">Save Account</CButton>
                 </div>
               </CForm>
             </CCardBody>
@@ -47,5 +47,11 @@
 <script>
 export default {
   name: 'Register',
+
+  methods:{
+    LoginPage(){
+      this.$router.push('/login'); 
+    },
+  }
 }
 </script>

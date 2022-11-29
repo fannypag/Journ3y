@@ -26,7 +26,7 @@
     </div>
     
     <div v-if="diaries.length===0">
-        <CCardTitle>Tidak ada Jurnal, silakan tambahkan pada fitur "Add Journal"</CCardTitle>
+        <CCardTitle>Tidak ada Jurnal pada tanggal ini, silakan tambahkan pada fitur "Add Journal"</CCardTitle>
     </div>
     <div v-else v-for="(diary, thedate) in diaries" :key="thedate">
         <CRow class="mt-2 mb-4">
