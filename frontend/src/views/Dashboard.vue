@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Journal />
+      <Journal />
   </div>
 </template>
 
@@ -23,10 +23,7 @@
 
     async created() {
         const response = await API.getJournalsByDate(this.thedate);
-        // const response = await API.getAllPosts()
         this.diaries = response;
-        // console.log(this.diaries)
-        // console.log(this.thedate)
     },
   }
 

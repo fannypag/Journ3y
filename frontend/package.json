@@ -32,6 +32,7 @@
     "axios": "^1.2.0",
     "bulma": "^0.9.4",
     "core-js": "^3.19.0",
+    "moment": "^2.29.4",
     "vue": "^3.2.23",
     "vue-grid-layout": "^2.4.0",
     "vue-moment": "^4.1.0",
