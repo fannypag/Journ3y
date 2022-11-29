@@ -12,16 +12,6 @@
             </template>
             </CWidgetStatsF>
         </CCol>
-        <CCol :xs="3">
-            <CPagination aria-label="Page navigation example">
-            <CPaginationItem aria-label="Previous" @click="getDate(-1)">
-                <span aria-hidden="true">&laquo;</span>
-            </CPaginationItem>
-            <CPaginationItem aria-label="Next" @click="getDate(1)">
-                <span aria-hidden="true">&raquo;</span>
-            </CPaginationItem>
-            </CPagination>
-        </CCol>
         </CRow>
     </div>
 
