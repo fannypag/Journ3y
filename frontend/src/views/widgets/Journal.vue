@@ -128,12 +128,22 @@
             </CCol>
         </CRow>
 
-        <CButton
-            @click="update(diary._id)"
-        >
-            Save Journal
-        </CButton>
-
+        <CRow>
+            <CCol>
+                <CButton
+                    @click="update(diary._id)"
+                >
+                    Save Journal
+                </CButton>
+            </CCol>
+            <CCol>
+                <CButton
+                    @click="deleteJ(diary._id)"
+                >
+                    Delete Journal
+                </CButton>
+            </CCol>
+        </CRow>
     </div>
 
 </template>
@@ -188,7 +198,14 @@
             const response = await API.updateJournal(id, diaries)
             // console.log("ini api",response)
             this.$router.push({name : 'Dashboard', params: {message: response.message}});
-        }
+        },
+        async deleteJ(id){
+            let diaries = this.diaries[0]
+
+            const response = await API.deleteJournal(id, diaries)
+            // console.log("ini api",response)
+            this.$router.push({name : 'Dashboard', params: {message: response.message}});
+        },
         
     },
 
