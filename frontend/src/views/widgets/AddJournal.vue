@@ -163,7 +163,16 @@
               this.date = mydate;
         },
         async add(){
-            let diaries = this.diaries[0]
+            console.log("test")
+            let diaries = null
+            if(this.diaries[0]){
+                diaries = this.diaries[0]
+            }
+            else{
+                diaries = {
+
+                }
+            }
             diaries.date = this.thedate
             diaries.desc1 = this.add1
             diaries.desc2 = this.add2
@@ -172,7 +181,7 @@
             diaries.desc5 = this.add5
             diaries.desc6 = this.add6
             delete diaries._id
-
+            console.log(diaries)
             const response = await API.saveJournal(diaries)
 
             this.$router.push({name : 'Dashboard', params: {message: response.message}});
