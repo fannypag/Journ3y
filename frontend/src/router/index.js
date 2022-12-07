@@ -53,12 +53,12 @@ const routes = [
       {
         path: '/login',
         name: 'Login',
-        component: () => import('@/views/pages/Login'),
+        component: () => import('@/App'),
       },
       {
         path: '/register',
         name: 'Register',
-        component: () => import('@/views/pages/Register'),
+        component: () => import('@/components/Authentication/Register'),
       },
     ],
   },
