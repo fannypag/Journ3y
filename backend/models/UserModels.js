@@ -26,8 +26,8 @@ import mongoose from "mongoose";
 // export default mongoose.model('user', User);
 
 // import mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 const userSchema = mongoose.Schema({
   name: {
     type: String,
@@ -43,13 +43,13 @@ const userSchema = mongoose.Schema({
   },
   confirmPassword: {
     type: String,
-    required: [true, "Please Include your password"]
+    // required: [true, "Please Include your password"]
   },
   tokens: [
     {
       token: {
         type: String,
-        required: true
+        // required: true
       }
     }
   ]
@@ -88,4 +88,4 @@ userSchema.statics.findByCredentials = async (email, password) => {
 };
 
 const User = mongoose.model("User", userSchema);
-module.exports = User;
+export default User;

@@ -1,4 +1,4 @@
-import express from "express";
+// import express from "express";
 // import { 
 //     getUsers, 
 //     getUserById,
@@ -16,14 +16,13 @@ import express from "express";
 // router.delete('/users/:id', deleteUser);
  
 
-
+import express from "express";
 // const express = require("express");
+import * as controller from "../controllers/UserControllers.js";
 const router = express.Router();
-const userController = require("../controller/userController");
 
-router.post("/register", userController.registerNewUser);
-router.post("/login", userController.loginUser);
-router.get("/me", userController.getUserDetails);
+router.post("/register", controller.registerNewUser);
+router.post("/login", controller.loginUser);
+router.get("/me", controller.getUserDetails);
 
-// module.exports = router;
 export default router;
