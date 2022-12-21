@@ -1,6 +1,6 @@
 <template>
   <router-view />
-   <div>
+   <!-- <div>
     <TheHeader :title="title"/>
     <div class="container">
       <base-card>
@@ -11,10 +11,10 @@
       <component :is="selectedTab"></component>
     </Keep-alive>
     </div>
-   </div>
+   </div> -->
 </template>
  
-<script>
+<!-- <script>
 // import exp from 'constants';
 import TheHeader from "./components/Layouts/TheHeader";
 
@@ -50,19 +50,19 @@ export default {
     }
   }
 };
-</script>
+</script> -->
 
 <style lang="scss">
 // Import Main styles for this application
 @import 'styles/style';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
-body,
-html {
-  font-family: "Open Sans", sans-serif;
-}
-.container {
-  width: 90%;
-  margin: 0 auto;
-}
+// body,
+// html {
+//   font-family: "Open Sans", sans-serif;
+// }
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+// }
 </style>
